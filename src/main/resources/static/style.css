@@ -204,3 +204,16 @@ footer {
         padding: 20px;
     }
 }
+
+/* Stilizează mesajul care confirmă salvarea programării. */
+.mesaj-succes {
+    background-color: #dcfce7; /* Fundal verde deschis. */
+    color: #166534; /* Text verde închis. */
+    border: 1px solid #86efac; /* Chenar verde. */
+    padding: 15px; /* Spațiu în interior. */
+    margin: 0 auto 25px; /* Centrează mesajul și adaugă spațiu dedesubt. */
+    border-radius: 8px; /* Rotunjește colțurile. */
+    max-width: 650px; /* Limitează lățimea mesajului. */
+    text-align: center; /* Centrează textul. */
+    font-weight: bold; /* Evidențiază mesajul. */
+}

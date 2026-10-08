@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Spune browserului că folosim HTML5. -->
 
-<html lang="ro">
+<html lang="ro" xmlns:th="http://www.thymeleaf.org">
 <!-- Începe documentul HTML și specifică limba română. -->
 
 <head>
@@ -43,13 +43,21 @@
 <main>
     <!-- Începe conținutul principal al paginii. -->
 
+
+    <!-- Afișează mesajul doar dacă există. -->
+    <div th:if="${mesaj}" class="mesaj-succes">
+
+        <!-- Afișează textul primit de la Controller. -->
+        <p th:text="${mesaj}"></p>
+
+    </div>
+
     <h2>Solicită o programare</h2>
     <!-- Titlul formularului. -->
 
 
-    <form>
-        <!-- Începe formularul de programare. -->
-
+    <form action="/programare" method="post">
+        <!-- Trimite datele formularului către /programare folosind metoda POST. -->
 
         <div>
             <!-- Câmpul pentru numele clientului. -->
