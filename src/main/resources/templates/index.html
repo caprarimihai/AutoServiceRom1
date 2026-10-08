@@ -1,21 +1,117 @@
-<!DOCTYPE html> <!-- Spune browserului că folosim HTML5. -->
+```html
+<!DOCTYPE html>
+<!-- Spune browserului că folosim standardul HTML5. -->
 
-<html lang="ro"> <!-- Începe pagina și spune că limba este română. -->
+<html lang="ro">
+<!-- Începe documentul HTML și specifică faptul că pagina este în limba română. -->
 
-<head> <!-- Începe partea de configurare a paginii. -->
+<head>
+    <!-- Începe zona de configurare a paginii. -->
 
-    <meta charset="UTF-8"> <!-- Permite afișarea corectă a caracterelor românești. -->
+    <meta charset="UTF-8">
+    <!-- Permite afișarea corectă a caracterelor românești. -->
 
-    <title>Auto Service</title> <!-- Titlul care apare în tab-ul browserului. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Face pagina adaptabilă pentru telefon, tabletă și calculator. -->
 
-</head> <!-- Închide partea head. -->
+    <title>Auto Service</title>
+    <!-- Titlul care apare în tab-ul browserului. -->
 
-<body> <!-- Începe conținutul vizibil al paginii. -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- Leagă pagina HTML de fișierul CSS. -->
 
-<h1>Auto Service</h1> <!-- Titlul principal al paginii. -->
+</head>
+<!-- Închide zona head. -->
 
-<p>Bine ai venit la Auto Service!</p> <!-- Primul mesaj pentru client. -->
+<body>
+<!-- Începe partea vizibilă a paginii. -->
 
-</body> <!-- Închide conținutul paginii. -->
+<header>
+    <!-- Începe partea de sus a paginii. -->
 
-</html> <!-- Închide documentul HTML. -->
+    <h1>🚗 Auto Service</h1>
+    <!-- Numele service-ului. -->
+
+    <p>Service auto profesional</p>
+    <!-- Sloganul scurt al service-ului. -->
+
+</header>
+<!-- Închide header-ul. -->
+
+
+<main>
+    <!-- Începe conținutul principal al paginii. -->
+
+    <h2>Serviciile noastre</h2>
+    <!-- Titlul secțiunii cu servicii. -->
+
+
+    <section>
+        <!-- Începe secțiunea care conține serviciile. -->
+
+        <div>
+            <!-- Primul serviciu. -->
+
+            <h3>🛢️ Schimb ulei</h3>
+            <!-- Numele primului serviciu. -->
+
+            <p>Schimbăm uleiul motorului rapid și profesionist.</p>
+            <!-- Descrierea primului serviciu. -->
+
+        </div>
+        <!-- Închide primul serviciu. -->
+
+
+        <div>
+            <!-- Al doilea serviciu. -->
+
+            <h3>🔧 Schimb filtre</h3>
+            <!-- Numele celui de-al doilea serviciu. -->
+
+            <p>Înlocuim filtrele pentru o funcționare corectă a automobilului.</p>
+            <!-- Descrierea celui de-al doilea serviciu. -->
+
+        </div>
+        <!-- Închide al doilea serviciu. -->
+
+
+        <div>
+            <!-- Al treilea element. -->
+
+            <h3>📅 Programare la service</h3>
+            <!-- Titlul pentru programare. -->
+
+            <p>Alege data și ora potrivită pentru vizita la service.</p>
+            <!-- Descrierea programării. -->
+
+        </div>
+        <!-- Închide al treilea element. -->
+
+    </section>
+    <!-- Închide secțiunea serviciilor. -->
+
+    <a href="/programare">
+        <button>
+            Programează-te
+        </button>
+    </a>
+
+</main>
+<!-- Închide conținutul principal. -->
+
+
+<footer>
+    <!-- Începe partea de jos a paginii. -->
+
+    <p>© 2026 Auto Service</p>
+    <!-- Copyright-ul aplicației. -->
+
+</footer>
+<!-- Închide footer-ul. -->
+
+</body>
+<!-- Închide partea vizibilă a paginii. -->
+
+</html>
+<!-- Închide documentul HTML. -->
+```

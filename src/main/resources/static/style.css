@@ -1,0 +1,116 @@
+
+    /* Elimină marginile și padding-ul implicite ale browserului. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stilizează întreaga pagină. */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    text-align: center;
+}
+
+/* Stilizează partea de sus a paginii. */
+header {
+    background-color: #1f2937;
+    color: white;
+    padding: 40px 20px;
+}
+
+/* Stilizează titlul principal. */
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+/* Stilizează sloganul. */
+header p {
+    font-size: 20px;
+}
+
+/* Stilizează zona principală. */
+main {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Stilizează titlul secțiunii. */
+main h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+/* Transformă secțiunea într-un container flexibil. */
+section {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Stilizează fiecare serviciu. */
+section div {
+    background-color: white;
+    width: 300px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilizează titlul fiecărui serviciu. */
+section h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Stilizează descrierea serviciului. */
+section p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Stilizează butonul de programare. */
+button {
+    margin-top: 40px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Schimbă aspectul butonului când mouse-ul este deasupra lui. */
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Stilizează partea de jos a paginii. */
+footer {
+    margin-top: 60px;
+    padding: 25px;
+    background-color: #1f2937;
+    color: white;
+}
+
+/* Adaptare pentru ecrane mici. */
+@media (max-width: 700px) {
+
+    /* Micșorează titlul pe telefon. */
+    header h1 {
+        font-size: 32px;
+    }
+
+    /* Face cardurile aproape cât lățimea ecranului. */
+    section div {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
