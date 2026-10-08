@@ -52,7 +52,7 @@ public class Programare {
     private String notes;
     // Observațiile clientului.
 
-    private String status;
+    private String status = "PENDING";
     // Statusul programării: PENDING, ACCEPTED sau REJECTED.
 
     public String getStatus() {
