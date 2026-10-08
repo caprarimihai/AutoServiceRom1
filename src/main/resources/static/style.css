@@ -1,5 +1,4 @@
-
-    /* Elimină marginile și padding-ul implicite ale browserului. */
+/* Elimină marginile și padding-ul implicite ale browserului. */
 * {
     margin: 0;
     padding: 0;
@@ -21,31 +20,31 @@ header {
     padding: 40px 20px;
 }
 
-/* Stilizează titlul principal. */
+/* Stilizează titlul principal din header. */
 header h1 {
     font-size: 42px;
     margin-bottom: 10px;
 }
 
-/* Stilizează sloganul. */
+/* Stilizează textul din header. */
 header p {
     font-size: 20px;
 }
 
-/* Stilizează zona principală. */
+/* Stilizează zona principală a paginii. */
 main {
     max-width: 1100px;
     margin: 50px auto;
     padding: 0 20px;
 }
 
-/* Stilizează titlul secțiunii. */
+/* Stilizează titlurile din zona principală. */
 main h2 {
     font-size: 32px;
     margin-bottom: 35px;
 }
 
-/* Transformă secțiunea într-un container flexibil. */
+/* Stilizează secțiunea cu serviciile de pe pagina principală. */
 section {
     display: flex;
     justify-content: center;
@@ -53,7 +52,7 @@ section {
     flex-wrap: wrap;
 }
 
-/* Stilizează fiecare serviciu. */
+/* Stilizează fiecare card de serviciu. */
 section div {
     background-color: white;
     width: 300px;
@@ -74,8 +73,95 @@ section p {
     color: #555;
 }
 
-/* Stilizează butonul de programare. */
-button {
+/* Stilizează formularul de programare. */
+form {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Stilizează fiecare grup din formular. */
+form > div {
+    margin-bottom: 20px;
+}
+
+/* Stilizează etichetele câmpurilor. */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Stilizează câmpurile de text, telefon, dată și oră. */
+form input[type="text"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="time"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Schimbă aspectul câmpului când utilizatorul îl selectează. */
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Stilizează zona pentru servicii. */
+form p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Stilizează etichetele pentru checkbox-uri. */
+form label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+/* Stilizează checkbox-urile. */
+form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+/* Permite redimensionarea verticală a zonei de observații. */
+form textarea {
+    resize: vertical;
+}
+
+/* Stilizează butonul formularului. */
+form button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Schimbă culoarea butonului când trecem cu mouse-ul peste el. */
+form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Stilizează butonul de pe pagina principală. */
+main > a button {
     margin-top: 40px;
     padding: 15px 35px;
     border: none;
@@ -86,8 +172,8 @@ button {
     cursor: pointer;
 }
 
-/* Schimbă aspectul butonului când mouse-ul este deasupra lui. */
-button:hover {
+/* Schimbă aspectul butonului principal la hover. */
+main > a button:hover {
     background-color: #1d4ed8;
 }
 
@@ -102,7 +188,7 @@ footer {
 /* Adaptare pentru ecrane mici. */
 @media (max-width: 700px) {
 
-    /* Micșorează titlul pe telefon. */
+    /* Micșorează titlul de pe telefon. */
     header h1 {
         font-size: 32px;
     }
@@ -112,5 +198,9 @@ footer {
         width: 100%;
         max-width: 400px;
     }
-}
 
+    /* Reduce marginile formularului pe telefon. */
+    form {
+        padding: 20px;
+    }
+}

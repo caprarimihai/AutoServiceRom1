@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- Spune browserului că folosim HTML5. -->
 
@@ -12,47 +11,193 @@
     <!-- Permite afișarea corectă a caracterelor românești. -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Face pagina adaptabilă pentru telefon și calculator. -->
+    <!-- Face pagina adaptabilă pentru telefon, tabletă și calculator. -->
 
     <title>Programare - Auto Service</title>
-    <!-- Titlul paginii afișat în browser. -->
+    <!-- Titlul paginii care apare în browser. -->
 
     <link rel="stylesheet" href="/style.css">
-    <!-- Folosește același fișier CSS ca pagina principală. -->
+    <!-- Leagă pagina de fișierul nostru CSS. -->
 
 </head>
 <!-- Închide zona head. -->
 
+
 <body>
 <!-- Începe conținutul vizibil al paginii. -->
+
 
 <header>
     <!-- Începe partea de sus a paginii. -->
 
     <h1>📅 Programare la Auto Service</h1>
-    <!-- Titlul paginii de programare. -->
+    <!-- Afișează titlul paginii. -->
 
     <p>Completează datele pentru programare.</p>
-    <!-- Explicație pentru client. -->
+    <!-- Explică utilizatorului ce trebuie să facă. -->
 
 </header>
 <!-- Închide header-ul. -->
 
+
 <main>
-    <!-- Începe conținutul principal. -->
+    <!-- Începe conținutul principal al paginii. -->
 
     <h2>Solicită o programare</h2>
     <!-- Titlul formularului. -->
 
-    <p>Formularul va fi construit în următorul pas.</p>
-    <!-- Mesaj temporar până construim formularul. -->
+
+    <form>
+        <!-- Începe formularul de programare. -->
+
+
+        <div>
+            <!-- Câmpul pentru numele clientului. -->
+
+            <label for="clientName">Nume și prenume:</label>
+            <!-- Eticheta câmpului. -->
+
+            <input type="text" id="clientName" name="clientName" required>
+            <!-- Permite clientului să introducă numele. -->
+
+        </div>
+        <!-- Închide câmpul pentru nume. -->
+
+
+        <div>
+            <!-- Câmpul pentru telefon. -->
+
+            <label for="phone">Telefon:</label>
+            <!-- Eticheta câmpului. -->
+
+            <input type="tel" id="phone" name="phone" required>
+            <!-- Permite introducerea numărului de telefon. -->
+
+        </div>
+        <!-- Închide câmpul pentru telefon. -->
+
+
+        <div>
+            <!-- Câmpul pentru marca mașinii. -->
+
+            <label for="carBrand">Marca mașinii:</label>
+            <!-- Eticheta câmpului. -->
+
+            <input type="text" id="carBrand" name="carBrand" required>
+            <!-- Permite introducerea mărcii mașinii. -->
+
+        </div>
+        <!-- Închide câmpul pentru marca mașinii. -->
+
+
+        <div>
+            <!-- Câmpul pentru modelul mașinii. -->
+
+            <label for="carModel">Modelul mașinii:</label>
+            <!-- Eticheta câmpului. -->
+
+            <input type="text" id="carModel" name="carModel" required>
+            <!-- Permite introducerea modelului mașinii. -->
+
+        </div>
+        <!-- Închide câmpul pentru modelul mașinii. -->
+
+
+        <div>
+            <!-- Câmpul pentru data programării. -->
+
+            <label for="date">Data programării:</label>
+            <!-- Eticheta câmpului pentru dată. -->
+
+            <input type="date" id="date" name="date" required>
+            <!-- Permite alegerea unei date din calendar. -->
+
+        </div>
+        <!-- Închide câmpul pentru dată. -->
+
+
+        <div>
+            <!-- Câmpul pentru ora programării. -->
+
+            <label for="time">Ora programării:</label>
+            <!-- Eticheta câmpului pentru oră. -->
+
+            <input type="time" id="time" name="time" required>
+            <!-- Permite alegerea orei. -->
+
+        </div>
+        <!-- Închide câmpul pentru oră. -->
+
+
+        <div>
+            <!-- Începe zona pentru alegerea serviciilor. -->
+
+            <p>Servicii dorite:</p>
+            <!-- Titlul listei de servicii. -->
+
+
+            <label>
+                <!-- Începe opțiunea pentru schimb ulei. -->
+
+                <input type="checkbox" name="services" value="OIL_CHANGE">
+                <!-- Creează căsuța pentru schimb ulei. -->
+
+                🛢️ Schimb ulei
+                <!-- Numele serviciului. -->
+
+            </label>
+            <!-- Închide opțiunea pentru schimb ulei. -->
+
+
+            <br>
+            <!-- Trecem pe rândul următor. -->
+
+
+            <label>
+                <!-- Începe opțiunea pentru schimb filtre. -->
+
+                <input type="checkbox" name="services" value="FILTER_CHANGE">
+                <!-- Creează căsuța pentru schimb filtre. -->
+
+                🔧 Schimb filtre
+                <!-- Numele serviciului. -->
+
+            </label>
+            <!-- Închide opțiunea pentru schimb filtre. -->
+
+        </div>
+        <!-- Închide zona serviciilor. -->
+
+
+        <div>
+            <!-- Începe zona pentru observații. -->
+
+            <label for="notes">Observații:</label>
+            <!-- Eticheta câmpului pentru observații. -->
+
+            <textarea id="notes" name="notes" rows="5"></textarea>
+            <!-- Permite clientului să scrie informații suplimentare. -->
+
+        </div>
+        <!-- Închide zona pentru observații. -->
+
+
+        <button type="submit">
+            Trimite programarea
+        </button>
+        <!-- Butonul pentru trimiterea formularului. -->
+
+
+    </form>
+    <!-- Închide formularul. -->
+
 
 </main>
 <!-- Închide conținutul principal. -->
+
 
 </body>
 <!-- Închide partea vizibilă a paginii. -->
 
 </html>
 <!-- Închide documentul HTML. -->
-```
