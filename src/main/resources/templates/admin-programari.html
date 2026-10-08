@@ -1,0 +1,152 @@
+```html
+<!DOCTYPE html>
+<!-- Declară documentul ca fiind HTML5. -->
+
+<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<!-- Declară limba română și activează Thymeleaf. -->
+
+<head>
+    <!-- Începe secțiunea cu setările paginii. -->
+
+    <meta charset="UTF-8">
+    <!-- Permite afișarea corectă a diacriticelor românești. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adaptează pagina la dimensiunea ecranului. -->
+
+    <title>Panou administrator</title>
+    <!-- Stabilește titlul paginii în browser. -->
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <!-- Încarcă fișierul CSS existent. -->
+</head>
+
+<body>
+<!-- Începe conținutul vizibil al paginii. -->
+
+<main class="container">
+    <!-- Grupează conținutul principal al paginii. -->
+
+    <h1>Panoul administratorului</h1>
+    <!-- Afișează titlul principal. -->
+
+    <p>Lista tuturor programărilor primite.</p>
+    <!-- Explică scopul paginii. -->
+
+    <p th:if="${#lists.isEmpty(programari)}">
+        <!-- Afișează mesajul dacă lista este goală. -->
+        Nu există încă programări.
+    </p>
+
+    <table th:unless="${#lists.isEmpty(programari)}">
+        <!-- Afișează tabelul numai dacă există programări. -->
+
+        <thead>
+        <!-- Definește antetul tabelului. -->
+        <tr>
+            <!-- Începe rândul cu denumirile coloanelor. -->
+            <th>ID</th>
+            <!-- Afișează identificatorul programării. -->
+            <th>Client</th>
+            <!-- Afișează numele clientului. -->
+            <th>Telefon</th>
+            <!-- Afișează numărul de telefon. -->
+            <th>Marca mașinii</th>
+            <!-- Afișează marca mașinii. -->
+            <th>Model</th>
+            <!-- Afișează modelul mașinii. -->
+            <th>Data</th>
+            <!-- Afișează data programării. -->
+            <th>Ora</th>
+            <!-- Afișează ora programării. -->
+            <th>Servicii</th>
+            <!-- Afișează serviciile solicitate. -->
+            <th>Status</th>
+            <!-- Afișează starea programării. -->
+            <th>Acțiuni</th>
+            <!-- Creează coloana pentru butoanele administratorului. -->
+        </tr>
+        </thead>
+
+        <tbody>
+        <!-- Începe zona cu datele programărilor. -->
+
+        <tr th:each="programare : ${programari}">
+            <!-- Creează câte un rând pentru fiecare programare. -->
+
+            <td>
+                <!-- Verifică dacă programarea așteaptă aprobarea. -->
+                <span th:if="${programare.status == 'PENDING'}">În așteptarea aprobării</span>
+
+                <!-- Verifică dacă programarea a fost acceptată. -->
+                <span th:if="${programare.status == 'ACCEPTED'}">Acceptată</span>
+
+                <!-- Verifică dacă programarea a fost respinsă. -->
+                <span th:if="${programare.status == 'REJECTED'}">Respinsă</span>
+
+                <!-- Afișează statusul original dacă nu corespunde valorilor cunoscute. -->
+                <span th:if="${programare.status != 'PENDING' and programare.status != 'ACCEPTED' and programare.status != 'REJECTED'}"
+                      th:text="${programare.status}"></span>
+            </td>
+
+            ```html
+            <!-- Începe celula cu acțiunile administratorului. -->
+            <td>
+                <!-- Afișează butoanele doar pentru programările încă în așteptare. -->
+                <div th:if="${programare.status == 'PENDING'}">
+
+                    <!-- Butonul trimite cererea de acceptare pentru ID-ul curent. -->
+                    <a th:href="@{/admin/programari/{id}/accepta(id=${programare.id})}">
+                        Acceptă
+                    </a>
+
+                    <!-- Butonul trimite cererea de respingere pentru ID-ul curent. -->
+                    <a th:href="@{/admin/programari/{id}/respinge(id=${programare.id})}">
+                        Respinge
+                    </a>
+
+                </div>
+
+                <!-- Afișează un mesaj dacă programarea a fost deja procesată. -->
+                <span th:if="${programare.status == 'ACCEPTED' or programare.status == 'REJECTED'}">
+        Procesată
+    </span>
+            </td>
+
+
+
+            <td th:text="${programare.clientName}"></td>
+            <!-- Afișează numele clientului. -->
+
+            <td th:text="${programare.phone}"></td>
+            <!-- Afișează telefonul clientului. -->
+
+            <td th:text="${programare.carBrand}"></td>
+            <!-- Afișează marca mașinii. -->
+
+            <td th:text="${programare.carModel}"></td>
+            <!-- Afișează modelul mașinii. -->
+
+            <td th:text="${programare.date}"></td>
+            <!-- Afișează data programării. -->
+
+            <td th:text="${programare.time}"></td>
+            <!-- Afișează ora programării. -->
+
+            <td th:text="${programare.services}"></td>
+            <!-- Afișează serviciile solicitate. -->
+
+            <td th:text="${programare.status}"></td>
+            <!-- Afișează statusul programării. -->
+
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="/">Înapoi la pagina principală</a>
+    <!-- Oferă un link către pagina principală. -->
+
+</main>
+</body>
+</html>
+```

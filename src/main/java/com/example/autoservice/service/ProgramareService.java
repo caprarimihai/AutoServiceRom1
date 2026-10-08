@@ -29,7 +29,31 @@ public class ProgramareService {
     public Programare salveazaProgramare(Programare programare) {
         // Creează metoda care va salva o programare.
 
+
+
         return programareRepository.save(programare);
         // Trimite programarea către repository, iar repository-ul o salvează în MySQL.
     }
+
+    // Returnează toate programările salvate în baza de date.
+    public java.util.List<Programare> toateProgramarile() {
+        // Cere repository-ului să citească toate înregistrările.
+        return programareRepository.findAll();
+    }
+
+    // Caută o programare după ID și îi schimbă statusul.
+    public void schimbaStatus(Long id, String statusNou) {
+        // Caută programarea în baza de date folosind ID-ul primit.
+        Programare programare = programareRepository.findById(id)
+                // Oprește operația dacă programarea nu există.
+                .orElseThrow(() -> new RuntimeException("Programarea nu a fost găsită!"));
+
+        // Setează noul status al programării.
+        programare.setStatus(statusNou);
+
+        // Salvează modificarea în baza de date.
+        programareRepository.save(programare);
+    }
+
+
 }

@@ -217,3 +217,77 @@ footer {
     text-align: center; /* Centrează textul. */
     font-weight: bold; /* Evidențiază mesajul. */
 }
+
+       /* Stilizează tabelul din panoul administratorului. */
+   table {
+       width: 100%; /* Folosește toată lățimea disponibilă. */
+       border-collapse: collapse; /* Unește marginile celulelor. */
+       margin-top: 24px; /* Adaugă spațiu deasupra tabelului. */
+       background-color: #ffffff; /* Setează fundalul alb. */
+       border-radius: 10px; /* Rotunjește colțurile tabelului. */
+       overflow: hidden; /* Ascunde conținutul care depășește marginile. */
+   }
+
+/* Stilizează celulele și antetul tabelului. */
+th,
+td {
+    padding: 14px 12px; /* Adaugă spațiu în interiorul celulelor. */
+    text-align: left; /* Aliniază textul la stânga. */
+    border-bottom: 1px solid #e5e7eb; /* Desenează o linie discretă. */
+}
+
+/* Evidențiază antetul tabelului. */
+th {
+    background-color: #163b65; /* Folosește un albastru închis. */
+    color: #ffffff; /* Afișează textul cu alb. */
+    font-weight: 600; /* Evidențiază denumirile coloanelor. */
+}
+
+/* Colorează rândul când cursorul trece peste el. */
+tbody tr:hover {
+    background-color: #f1f5f9; /* Evidențiază rândul selectat vizual. */
+}
+
+/* Stilizează linkurile folosite ca butoane. */
+td a {
+    display: inline-block; /* Permite aplicarea spațierii ca unui buton. */
+    padding: 8px 12px; /* Creează spațiu în jurul textului. */
+    margin: 3px; /* Separă butoanele între ele. */
+    border-radius: 6px; /* Rotunjește colțurile butoanelor. */
+    text-decoration: none; /* Elimină sublinierea linkurilor. */
+    font-weight: 600; /* Evidențiază textul butoanelor. */
+    font-size: 14px; /* Setează dimensiunea textului. */
+    transition: background-color 0.2s ease; /* Face schimbarea culorii mai lină. */
+}
+
+/* Colorează butonul Acceptă. */
+td a[href*="/accepta"] {
+    background-color: #15803d; /* Folosește verde pentru acceptare. */
+    color: #ffffff; /* Setează textul alb. */
+}
+
+/* Schimbă culoarea butonului Acceptă la trecerea cursorului. */
+td a[href*="/accepta"]:hover {
+    background-color: #166534; /* Folosește un verde mai închis. */
+}
+
+/* Colorează butonul Respinge. */
+td a[href*="/respinge"] {
+    background-color: #b91c1c; /* Folosește roșu pentru respingere. */
+    color: #ffffff; /* Setează textul alb. */
+}
+
+/* Schimbă culoarea butonului Respinge la trecerea cursorului. */
+td a[href*="/respinge"]:hover {
+    background-color: #991b1b; /* Folosește un roșu mai închis. */
+}
+
+/* Împiedică tabelul să strice aspectul pe ecrane mici. */
+@media (max-width: 900px) {
+    table {
+        display: block; /* Permite derularea tabelului pe orizontală. */
+        overflow-x: auto; /* Activează derularea când tabelul este prea lat. */
+        white-space: nowrap; /* Păstrează fiecare rând pe o singură linie. */
+    }
+}
+

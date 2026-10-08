@@ -1,7 +1,10 @@
 package com.example.autoservice.controller;
 // Spune că această clasă aparține package-ului controller.
+import java.util.List; // Permite folosirea listelor de programări.
 
 import com.example.autoservice.model.Programare;
+
+import org.springframework.web.bind.annotation.PathVariable; // Citește ID-ul din adresa URL.
 // Importă modelul Programare.
 
 import com.example.autoservice.service.ProgramareService;
@@ -70,4 +73,38 @@ public class HomeController {
         return "programare";
         // Revine la pagina formularului.
     }
+    // Deschide pagina administratorului cu toate programările.
+    @GetMapping("/admin/programari")
+    public String afiseazaProgramari(Model model) {
+        // Citește toate programările din baza de date.
+        List<Programare> programari = programareService.toateProgramarile();
+
+        // Trimite lista de programări către pagina HTML.
+        model.addAttribute("programari", programari);
+
+        // Deschide pagina admin-programari.html.
+        return "admin-programari";
+    }
+
+// Acceptă o programare identificată prin ID.
+    @GetMapping("/admin/programari/{id}/accepta")
+    public String acceptaProgramare(@PathVariable Long id) {
+        // Schimbă statusul programării în ACCEPTED.
+        programareService.schimbaStatus(id, "ACCEPTED");
+
+        // Revine la lista programărilor din panoul administratorului.
+        return "redirect:/admin/programari";
+    }
+
+    // Respinge o programare identificată prin ID.
+    @GetMapping("/admin/programari/{id}/respinge")
+    public String respingeProgramare(@PathVariable Long id) {
+        // Schimbă statusul programării în REJECTED.
+        programareService.schimbaStatus(id, "REJECTED");
+
+        // Revine la lista programărilor din panoul administratorului.
+        return "redirect:/admin/programari";
+    }
+
+
 }

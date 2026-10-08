@@ -11,4 +11,9 @@ public interface ProgramareRepository extends JpaRepository<Programare, Long> {
     // Creează repository-ul pentru entitatea Programare.
     // Programare = entitatea pe care o gestionăm.
     // Long = tipul ID-ului entității.
+
+    // Repository-ul oferă deja metode precum save() și findAll().
+    // findAll() citește toate programările din baza de date.
+
+    
 }
